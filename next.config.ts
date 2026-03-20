@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: [
+    "127.0.0.1",
+    "localhost",
     // Private LAN (Origin host is your Mac’s IP, e.g. 192.168.1.124)
     "192.168.*.*",
     "10.*.*.*",

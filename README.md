@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 The dev server listens on all interfaces by default (`0.0.0.0`). On your phone, open **`http://<your-mac-lan-ip>:3000`** (the “Network” URL Next prints in the terminal).
 
-`allowedDevOrigins` in [`next.config.ts`](next.config.ts) allows HMR and dev assets from typical private LANs (`192.168.*.*`, `10.*.*.*`). If your LAN uses another range (e.g. `172.16.x.x`), set hosts in `.env.local`:
+`allowedDevOrigins` in [`next.config.ts`](next.config.ts) includes **`localhost`**, **`127.0.0.1`**, and private LAN patterns (`192.168.*.*`, `10.*.*.*`). If your LAN uses another range (e.g. `172.16.x.x`), set hosts in `.env.local`:
 
 ```bash
 ALLOWED_DEV_ORIGINS=172.16.0.5,another-host.local
@@ -35,6 +35,10 @@ Restart `npm run dev` after changing config or env.
 ### Visual QA (MCP / screenshots)
 
 See **[docs/dev-visual-feedback.md](docs/dev-visual-feedback.md)** for using **Cursor IDE Browser** or **Playwright MCP** to navigate the running app, capture full-page screenshots, and tighten the design loop.
+
+### Dev console / terminal noise
+
+See **[docs/dev-console-notes.md](docs/dev-console-notes.md)** for what HMR, hydration, and Fast Refresh messages mean (and what you can ignore).
 
 ## Scripts
 

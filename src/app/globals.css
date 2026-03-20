@@ -67,7 +67,7 @@ body {
 
 /*
  * FadeUp (client): starts hidden until .visible — see FadeUp.tsx for reveal guarantees
- * (sync in-view check, IO + large rootMargin, 600ms fallback) so content never sticks invisible.
+ * (sync in-view check, IO with Safari-safe rootMargin fallbacks, 600ms fallback).
  */
 .fade-up {
   opacity: 0;

@@ -11,7 +11,7 @@ Captured after this update with Playwright against `http://127.0.0.1:3000` (loca
 
 `FadeUp` used `opacity: 0` until `IntersectionObserver` fired. In **headless Playwright**, the **viewport** is short (e.g. 844px tall) while the **document** is much taller. Blocks **below the fold** never intersected the viewport, so they **never got `.visible`** — the screenshot looked like a blank strip between header and footer, while the Unsplash footnote (outside `FadeUp`) still showed.
 
-**Fix:** `useLayoutEffect` in-view reveal, IO with a **large `rootMargin`** below the fold, and a **600ms fallback** that always adds `.visible`. Real phones also benefit if IO is flaky (e.g. some Safari cases).
+**Fix:** `useLayoutEffect` in-view reveal, IO with **Safari-safe `rootMargin` fallbacks** (percent + stepped px; very large px threw in WebKit), and a **600ms fallback** that always adds `.visible`.
 
 ## What verified correctly (tree)
 
