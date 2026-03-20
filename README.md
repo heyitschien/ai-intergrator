@@ -53,7 +53,7 @@ import Image from "next/image";
 
 ## Deploy on Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/ai-intergrator)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/heyitschien/ai-intergrator)
 
 Or connect your GitHub repo in the [Vercel dashboard](https://vercel.com) for automatic deploys on push.
 
