@@ -7,6 +7,12 @@ Captured after this update with Playwright against `http://127.0.0.1:3000` (loca
 
 > **Note:** Automated “describe this screenshot” models often misread long, narrow full-page PNGs (hallucinated nav labels). The **accessibility tree** from the same session was used as the source of truth below.
 
+### Why full-page MCP screenshots looked “empty” (fixed)
+
+`FadeUp` used `opacity: 0` until `IntersectionObserver` fired. In **headless Playwright**, the **viewport** is short (e.g. 844px tall) while the **document** is much taller. Blocks **below the fold** never intersected the viewport, so they **never got `.visible`** — the screenshot looked like a blank strip between header and footer, while the Unsplash footnote (outside `FadeUp`) still showed.
+
+**Fix:** `useLayoutEffect` in-view reveal, IO with a **large `rootMargin`** below the fold, and a **600ms fallback** that always adds `.visible`. Real phones also benefit if IO is flaky (e.g. some Safari cases).
+
 ## What verified correctly (tree)
 
 - **Landmarks:** `banner`, `main`, `contentinfo`; region for Schedule (Examples merged into use cases).

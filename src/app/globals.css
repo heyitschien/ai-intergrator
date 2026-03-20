@@ -65,6 +65,10 @@ body {
   line-height: 1.6;
 }
 
+/*
+ * FadeUp (client): starts hidden until .visible — see FadeUp.tsx for reveal guarantees
+ * (sync in-view check, IO + large rootMargin, 600ms fallback) so content never sticks invisible.
+ */
 .fade-up {
   opacity: 0;
   transform: translateY(18px);
