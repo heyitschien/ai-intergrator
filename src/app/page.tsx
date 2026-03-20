@@ -4,7 +4,6 @@ import { WhatIHelp } from "@/components/WhatIHelp";
 import { WhoIHelp } from "@/components/WhoIHelp";
 import { Approach } from "@/components/Approach";
 import { UseCases } from "@/components/UseCases";
-import { RealExamples } from "@/components/RealExamples";
 import { Story } from "@/components/Story";
 import { ScheduleChat } from "@/components/ScheduleChat";
 import { Connect } from "@/components/Connect";
@@ -20,7 +19,6 @@ export default function Home() {
         <WhoIHelp />
         <Approach />
         <UseCases />
-        <RealExamples />
         <Story />
         <ScheduleChat />
         <Connect />

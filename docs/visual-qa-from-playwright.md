@@ -9,8 +9,8 @@ Captured after this update with Playwright against `http://127.0.0.1:3000` (loca
 
 ## What verified correctly (tree)
 
-- **Landmarks:** `banner`, `main`, `contentinfo`; regions for Examples and Schedule.
-- **Examples:** Three articles with **meaningful `img` alt text** (individuals / small business / community) and matching `h3` headings.
+- **Landmarks:** `banner`, `main`, `contentinfo`; region for Schedule (Examples merged into use cases).
+- **Use cases:** Four articles, each with **photo + scenario** (`img` alt text per card).
 - **Schedule:** `h2` “Prefer to talk it through? Book a short call.” + primary/secondary actions (env-driven booking vs **Email instead** → `#connect`).
 - **Connect:** Email + LinkedIn block + CTAs unchanged.
 - **Nav (mobile width):** Menu button + **Get in touch**; desktop snapshot shows full inline section links including **Book 15 min** → `#schedule`.
@@ -23,10 +23,10 @@ Captured after this update with Playwright against `http://127.0.0.1:3000` (loca
 ## Recommended visual / UX polish (next iteration)
 
 1. **Schedule fallback (no env):** On narrow screens, the dashed “add `NEXT_PUBLIC_SCHEDULE_URL`” copy is long. Consider a **single-line** version under `sm` or collapsible “Setup” `<details>` so the block stays scannable.
-2. **Examples band:** Three photos add weight; ensure **CLS** stays low (fixed `aspect-[4/3]` + `fill` helps). Optionally add a hairline **divider** above the Unsplash footnote so it doesn’t compete with card copy.
+2. **Use case photos:** Four images; **CLS** stays low with fixed `aspect-[4/3]` + `fill`. Optional hairline above the Unsplash footnote.
 3. **Conversion path:** After `SCHEDULE_URL` is set, mirror **Book 15 minutes** once in the **Connect** card as a tertiary link for people who scroll straight to the bottom.
-4. **Performance:** Remote Unsplash + `next/image` is good; if Lighthouse flags LCP, add `priority` only to the **first** example image (keep others default lazy).
+4. **Performance:** If Lighthouse flags LCP, add `priority` only to the **first** use case image (keep others default lazy).
 
 ## Psychological flow (sanity check)
 
-Identity (Hero) → Capability (What I help) → Audience → Approach → Use cases → **Visual who-it’s-for (Examples)** → Story → **Low-friction call (Schedule)** → **Connect**. Matches “clarity engine” intent: understand → trust → act.
+Identity (Hero) → Capability (What I help) → Audience → Approach → **Use cases (scenarios + photos)** → Story → **Schedule** → **Connect**. Matches “clarity engine” intent: understand → trust → act.

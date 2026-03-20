@@ -68,9 +68,9 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 
 Full walkthrough: **[docs/scheduling-setup.md](docs/scheduling-setup.md)**. Copy **[.env.example](.env.example)** to `.env.local` as a starting point.
 
-### Real Examples imagery
+### Use case imagery
 
-The **Who this is for** section uses three **Unsplash** photos (individuals, small business, community) — no manual asset work. See **[docs/example-stock-images.md](docs/example-stock-images.md)**.
+Each **use case** card includes an **Unsplash** photo (four scenarios). Swap URLs in `src/components/UseCases.tsx` if you want different stock. See **[docs/example-stock-images.md](docs/example-stock-images.md)**.
 
 ### Contact Details
 

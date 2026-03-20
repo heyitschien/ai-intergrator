@@ -14,13 +14,13 @@ Synthesis of your captures (Connect, Approach, Use cases, Story, Quick snapshot)
 
 ## Gaps the screenshots surfaced
 
-1. **Mobile wayfinding** — Long one-pagers work, but without section links users rely on scroll alone. A lightweight **menu** (or sticky mini-nav) answers “where am I?” and supports **task-based visitors** (jump to Connect). *Implemented: mobile section menu + full nav links including Approach & Examples.*
+1. **Mobile wayfinding** — Long one-pagers work, but without section links users rely on scroll alone. A lightweight **menu** (or sticky mini-nav) answers “where am I?” and supports **task-based visitors** (jump to Connect). *Implemented: mobile section menu + full nav links including Approach & Use cases.*
 
 2. **Avatar = “C”** — Abstract letter reads as placeholder, not identity. A **real headshot** in the bar increases *recognition and trust* (consistent with executive brief: human, not corporate). *Implemented: same headshot as Hero.*
 
 3. **Visual sameness mid-page** — Numbered blocks and text-only snapshot cards are clear but **uniform**. Differentiating with **small, meaningful icons** improves scan speed without adding noise. *Implemented: icons on use cases, approach, snapshot.*
 
-4. **“Proof” before contact** — Overview doc stresses *real examples*. Screens showed strong copy but **no visual proof strip**. A dedicated **Examples** block with image placeholders creates a slot for before/after or workflow shots. *Implemented: `RealExamples` section.*
+4. **“Proof” before contact** — Overview doc stresses *real examples*. **Use case** cards now carry **one photo each** so proof and scenario stay in a single section (no duplicate “who this is for” block).
 
 5. **Motion & accessibility** — Fade-on-scroll is nice; some users need **reduced motion**. *Implemented: `prefers-reduced-motion` for scroll + fade-up.*
 
