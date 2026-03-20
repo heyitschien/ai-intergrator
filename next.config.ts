@@ -12,6 +12,15 @@ const extraAllowedDevOrigins =
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
+  },
   allowedDevOrigins: [
     // Private LAN (Origin host is your Mac’s IP, e.g. 192.168.1.124)
     "192.168.*.*",

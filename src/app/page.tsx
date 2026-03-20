@@ -6,6 +6,7 @@ import { Approach } from "@/components/Approach";
 import { UseCases } from "@/components/UseCases";
 import { RealExamples } from "@/components/RealExamples";
 import { Story } from "@/components/Story";
+import { ScheduleChat } from "@/components/ScheduleChat";
 import { Connect } from "@/components/Connect";
 import { Footer } from "@/components/Footer";
 
@@ -21,6 +22,7 @@ export default function Home() {
         <UseCases />
         <RealExamples />
         <Story />
+        <ScheduleChat />
         <Connect />
       </main>
       <Footer />

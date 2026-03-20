@@ -55,6 +55,23 @@ For correct **Open Graph / Twitter** absolute URLs in production, set in Vercel 
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
+### 15-minute booking (Cal.com / Calendly)
+
+1. Create a **15-minute** event in [Cal.com](https://cal.com) or [Calendly](https://calendly.com).
+2. Set in `.env.local` or Vercel:
+
+   ```bash
+   NEXT_PUBLIC_SCHEDULE_URL=https://cal.com/yourusername/15min
+   ```
+
+3. Redeploy. The **Schedule** section (before **Connect**) shows **Book 15 minutes** and opens in a new tab (works on phone).
+
+Full walkthrough: **[docs/scheduling-setup.md](docs/scheduling-setup.md)**. Copy **[.env.example](.env.example)** to `.env.local` as a starting point.
+
+### Real Examples imagery
+
+The **Who this is for** section uses three **Unsplash** photos (individuals, small business, community) — no manual asset work. See **[docs/example-stock-images.md](docs/example-stock-images.md)**.
+
 ### Contact Details
 
 - **Email**: Edit `EMAIL` in `src/components/Connect.tsx`.

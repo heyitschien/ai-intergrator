@@ -8,5 +8,6 @@ export const SECTION_LINKS = [
   { href: "#use-cases", label: "Use cases" },
   { href: "#examples", label: "Examples" },
   { href: "#story", label: "Story" },
+  { href: "#schedule", label: "Book 15 min" },
   { href: "#connect", label: "Connect" },
 ] as const;
