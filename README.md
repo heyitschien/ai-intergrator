@@ -87,6 +87,8 @@ Each **use case** card includes an **Unsplash** photo (four scenarios). Swap URL
 
 Or connect your GitHub repo in the [Vercel dashboard](https://vercel.com) for automatic deploys on push.
 
+**Before going live:** walk through **[docs/production-checklist.md](docs/production-checklist.md)** (env vars, domain, `NEXT_PUBLIC_SITE_URL`, contact links, smoke tests).
+
 ## CI
 
 GitHub Actions runs on **every pull request** and on **pushes to `main`**: install, lint, build.

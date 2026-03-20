@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeUp } from "./FadeUp";
-import { HEADSHOT_PATH } from "@/lib/site";
+import { HEADSHOT_PATH, SITE_DISPLAY_NAME } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -20,7 +20,7 @@ export function Hero() {
               AI translator for real life — I help turn complex tools into clear, practical steps you can actually use.
             </p>
             <p className="m-0 text-[var(--muted)] text-[1.02rem] max-w-[38rem]">
-              I&apos;m Chien — a technologist who enjoys turning AI into practical, helpful tools for everyday life,
+              I&apos;m {SITE_DISPLAY_NAME} — a technologist who enjoys turning AI into practical, helpful tools for everyday life,
               creative work, and small business workflows. I care about making technology feel clear, useful,
               and human.
             </p>
@@ -55,7 +55,7 @@ export function Hero() {
               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow)] bg-[var(--accent-soft)]">
                 <Image
                   src={HEADSHOT_PATH}
-                  alt="Chien — technologist helping people use AI in practical, human ways"
+                  alt={`${SITE_DISPLAY_NAME} — technologist helping people use AI in practical, human ways`}
                   fill
                   priority
                   sizes="(max-width: 1023px) 104px, 132px"
@@ -63,7 +63,7 @@ export function Hero() {
                 />
               </div>
               <div>
-                <h2 className="m-0 text-xl leading-tight">Chien</h2>
+                <h2 className="m-0 text-lg sm:text-xl leading-snug">{SITE_DISPLAY_NAME}</h2>
                 <p className="m-[0.35rem_0_0] text-[var(--muted)] text-[0.95rem]">
                   Technologist, builder, and translator of AI into practical workflows people can actually use.
                 </p>

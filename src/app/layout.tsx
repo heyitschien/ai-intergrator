@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
-import { HEADSHOT_PATH } from "@/lib/site";
+import { HEADSHOT_PATH, SITE_DISPLAY_NAME } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,11 +20,11 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Chien | Practical AI for Real Life",
+  title: `${SITE_DISPLAY_NAME} | Practical AI for Real Life`,
   description:
     "Technologist helping people and businesses use AI in practical, human ways — from everyday workflows to creative ideas and small business support.",
   openGraph: {
-    title: "Chien | Practical AI for Real Life",
+    title: `${SITE_DISPLAY_NAME} | Practical AI for Real Life`,
     description:
       "Technologist helping people and businesses use AI in practical, human ways.",
     type: "website",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: HEADSHOT_PATH,
         width: 800,
         height: 800,
-        alt: "Chien",
+        alt: SITE_DISPLAY_NAME,
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Chien | Practical AI for Real Life",
+    title: `${SITE_DISPLAY_NAME} | Practical AI for Real Life`,
     description:
       "Technologist helping people and businesses use AI in practical, human ways.",
     images: [HEADSHOT_PATH],
