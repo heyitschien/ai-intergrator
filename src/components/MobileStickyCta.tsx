@@ -71,7 +71,7 @@ export function MobileStickyCta() {
                 href={scheduleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[3rem] flex-1 items-center justify-center rounded-full bg-[var(--accent)] px-4 py-2.5 text-center text-sm font-semibold text-white border border-[var(--accent)] hover:bg-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+                className="btn-primary-gradient inline-flex min-h-[3rem] flex-1 items-center justify-center rounded-full px-4 py-2.5 text-center text-sm font-semibold border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
               >
                 Book 15 min
               </a>
@@ -85,7 +85,7 @@ export function MobileStickyCta() {
           ) : (
             <Link
               href="#connect"
-              className="inline-flex min-h-[3rem] w-full items-center justify-center rounded-full bg-[var(--accent)] px-4 py-2.5 text-center text-sm font-semibold text-white border border-[var(--accent)] hover:bg-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="btn-primary-gradient inline-flex min-h-[3rem] w-full items-center justify-center rounded-full px-4 py-2.5 text-center text-sm font-semibold border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             >
               Get in touch
             </Link>

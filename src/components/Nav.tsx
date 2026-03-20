@@ -224,7 +224,7 @@ export function Nav() {
             ))}
             <Link
               href="#connect"
-              className="mt-2 mx-4 mb-2 inline-flex items-center justify-center py-3 px-4 rounded-full bg-[var(--accent)] text-white font-semibold uppercase tracking-[0.07em] text-[0.75rem] hover:bg-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="btn-primary-gradient mt-2 mx-4 mb-2 inline-flex items-center justify-center py-3 px-4 rounded-full font-semibold uppercase tracking-[0.07em] text-[0.75rem] border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
               onClick={() => setOpen(false)}
             >
               Get in touch

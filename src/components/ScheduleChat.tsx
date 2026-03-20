@@ -13,12 +13,12 @@ export function ScheduleChat() {
     >
       <div className="w-[min(calc(100%-2rem),var(--max))] mx-auto">
         <FadeUp>
-          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-xl)] shadow-[var(--shadow)] p-[1.35rem] md:p-8 md:flex md:items-center md:gap-10">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--accent-soft)] text-[var(--accent)] mb-5 md:mb-0">
+          <div className="card-gradient-top card-ambient-surface border border-[var(--border)] rounded-[var(--radius-xl)] shadow-[var(--shadow)] p-[1.35rem] md:p-8 md:flex md:items-center md:gap-10">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl pill-gradient-subtle mb-5 md:mb-0">
               <CalendarClock className="h-7 w-7" aria-hidden />
             </div>
             <div className="min-w-0 flex-1">
-              <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
+              <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full pill-gradient-subtle text-[0.82rem] font-semibold tracking-wide">
                 15-minute chat
               </div>
               <h2
@@ -38,7 +38,7 @@ export function ScheduleChat() {
                     href={scheduleUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 min-h-[3.15rem] py-[0.95rem] px-[1.25rem] rounded-full font-semibold bg-[var(--accent)] text-white border border-[var(--accent)] hover:bg-[var(--accent-hover)] hover:border-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 transition-colors"
+                    className="btn-primary-gradient inline-flex items-center justify-center gap-2 min-h-[3.15rem] py-[0.95rem] px-[1.25rem] rounded-full font-semibold border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 transition-colors"
                   >
                     Book 15 minutes
                   </a>
