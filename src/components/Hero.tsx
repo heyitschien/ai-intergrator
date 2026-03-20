@@ -99,6 +99,12 @@ export function Hero() {
           </aside>
         </FadeUp>
       </div>
+      {/* Sentinel for MobileStickyCta: show bar only after user scrolls past hero */}
+      <div
+        id="hero-sentinel"
+        className="h-px w-full shrink-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      />
     </section>
   );
 }

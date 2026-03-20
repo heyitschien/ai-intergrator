@@ -57,7 +57,12 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${sora.variable} antialiased`}
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <a href="#top" className="skip-to-main">
+          Skip to main content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

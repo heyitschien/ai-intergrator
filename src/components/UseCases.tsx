@@ -1,15 +1,21 @@
-import Image from "next/image";
-import { Briefcase, GraduationCap, Palette, Workflow } from "lucide-react";
 import { FadeUp } from "./FadeUp";
+import { UseCaseCard, type UseCaseIconKey } from "./UseCaseCard";
 
 /**
  * One image per scenario — carries “who it’s for” visually without a duplicate section.
  * @see docs/example-stock-images.md
  */
-const useCases = [
+const useCases: {
+  number: string;
+  iconKey: UseCaseIconKey;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+}[] = [
   {
     number: "01",
-    icon: Palette,
+    iconKey: "palette",
     title: "Helping a design business visualize ideas faster",
     description:
       "Using AI image workflows to show clients finish or style possibilities in their real space before work begins.",
@@ -20,7 +26,7 @@ const useCases = [
   },
   {
     number: "02",
-    icon: Briefcase,
+    iconKey: "briefcase",
     title: "Helping a small business improve workflow",
     description:
       "Finding simple ways AI can support intake, proposals, content creation, scheduling, or internal organization.",
@@ -31,7 +37,7 @@ const useCases = [
   },
   {
     number: "03",
-    icon: GraduationCap,
+    iconKey: "graduation",
     title: "Helping individuals learn AI with confidence",
     description:
       "Showing students, seniors, or everyday users how to use AI tools in useful, understandable ways.",
@@ -42,7 +48,7 @@ const useCases = [
   },
   {
     number: "04",
-    icon: Workflow,
+    iconKey: "workflow",
     title: "Helping creators turn ideas into systems",
     description:
       "Connecting writing, design, automation, and web tools into repeatable creative workflows.",
@@ -71,31 +77,16 @@ export function UseCases() {
         </FadeUp>
 
         <div className="grid gap-4 mt-6 sm:grid-cols-2">
-          {useCases.map(({ number, icon: Icon, title, description, imageSrc, imageAlt }) => (
+          {useCases.map(({ number, iconKey, title, description, imageSrc, imageAlt }) => (
             <FadeUp key={number}>
-              <article className="flex flex-col h-full overflow-hidden bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-lg)] shadow-[var(--shadow)]">
-                <div className="relative aspect-[4/3] border-b border-[var(--border)] bg-[var(--accent-soft)] shrink-0">
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1120px) 50vw, 560px"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 mb-[0.9rem]">
-                    <div className="w-11 h-11 grid place-items-center rounded-[0.95rem] bg-[var(--accent-soft)] text-[var(--accent)] font-bold">
-                      {number}
-                    </div>
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-white text-[var(--accent)]">
-                      <Icon className="w-5 h-5" aria-hidden />
-                    </div>
-                  </div>
-                  <h3 className="m-0 mb-[0.45rem] text-[1.1rem] leading-tight">{title}</h3>
-                  <p className="m-0 text-[var(--muted)] text-[0.96rem]">{description}</p>
-                </div>
-              </article>
+              <UseCaseCard
+                number={number}
+                iconKey={iconKey}
+                title={title}
+                description={description}
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+              />
             </FadeUp>
           ))}
         </div>

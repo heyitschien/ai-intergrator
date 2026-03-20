@@ -8,12 +8,17 @@ import { Story } from "@/components/Story";
 import { ScheduleChat } from "@/components/ScheduleChat";
 import { Connect } from "@/components/Connect";
 import { Footer } from "@/components/Footer";
+import { MobileStickyCta } from "@/components/MobileStickyCta";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <main id="top">
+      <main
+        id="top"
+        tabIndex={-1}
+        className="pb-[calc(5.75rem+env(safe-area-inset-bottom))] lg:pb-0 outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+      >
         <Hero />
         <WhatIHelp />
         <WhoIHelp />
@@ -23,6 +28,7 @@ export default function Home() {
         <ScheduleChat />
         <Connect />
       </main>
+      <MobileStickyCta />
       <Footer />
     </>
   );

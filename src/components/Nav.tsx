@@ -2,20 +2,69 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { HEADSHOT_PATH, SECTION_LINKS } from "@/lib/site";
 
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+function getFocusable(container: HTMLElement): HTMLElement[] {
+  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
+    (el) => !el.hasAttribute("disabled") && el.getAttribute("aria-hidden") !== "true",
+  );
+}
+
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const prevOpenRef = useRef(false);
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      if (prevOpenRef.current) {
+        menuButtonRef.current?.focus();
+      }
+      prevOpenRef.current = false;
+      return;
+    }
+
+    prevOpenRef.current = true;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const focusable = getFocusable(panel);
+    const first = focusable[0];
+    queueMicrotask(() => first?.focus());
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const nodes = getFocusable(panel);
+      if (nodes.length === 0) return;
+
+      const firstEl = nodes[0];
+      const lastEl = nodes[nodes.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+
+      if (e.shiftKey) {
+        if (active === firstEl || !panel.contains(active)) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else if (active === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
+      }
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
   useEffect(() => {
@@ -66,6 +115,7 @@ export function Nav() {
 
         <div className="flex items-center gap-2 shrink-0">
           <button
+            ref={menuButtonRef}
             type="button"
             className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] shadow-[var(--shadow)] hover:bg-[var(--accent-soft)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             aria-expanded={open ? "true" : "false"}
@@ -88,6 +138,7 @@ export function Nav() {
 
       {open ? (
         <div
+          ref={panelRef}
           id="mobile-nav-panel"
           className="lg:hidden border-t border-[var(--border)] bg-[rgba(247,250,252,0.98)] backdrop-blur-md max-h-[min(70vh,calc(100dvh-4.5rem))] overflow-y-auto"
           role="dialog"
