@@ -10,6 +10,8 @@
   --accent-soft: #eaf2ff;
   --border: #e6edf3;
   --warm: #c08457;
+  --surface-warm: #faf8f5;
+  --border-warm: #ebe4dc;
   --shadow: 0 10px 30px rgba(16, 33, 43, 0.06);
   --radius-xl: 24px;
   --radius-lg: 20px;
@@ -27,6 +29,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-border: var(--border);
   --color-warm: var(--warm);
+  --color-surface-warm: var(--surface-warm);
+  --color-border-warm: var(--border-warm);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -47,14 +51,40 @@ html {
   }
 }
 
-/* Gentle section rhythm — “peaceful intelligence” without heavy bands */
+/*
+ * Section bands: anchor top and bottom to --bg so transitions from “plain” sections
+ * aren’t abrupt. Avoid `transparent` in gradients (odd interpolation vs body).
+ * Middle stops add a soft cool or warm “hill” that still reads as one page.
+ */
 .section-alt {
   background: linear-gradient(
     180deg,
-    rgba(234, 242, 255, 0.4) 0%,
-    rgba(247, 250, 252, 0.85) 45%,
-    transparent 100%
+    var(--bg) 0%,
+    color-mix(in srgb, var(--bg) 62%, var(--accent-soft)) 32%,
+    color-mix(in srgb, var(--bg) 48%, var(--accent-soft)) 50%,
+    color-mix(in srgb, var(--bg) 65%, var(--accent-soft)) 68%,
+    var(--bg) 100%
   );
+}
+
+/* Warm “breathe” lane — peach/stone in the middle, same edge color as the page */
+.section-warm {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    color-mix(in srgb, var(--bg) 74%, var(--surface-warm)) 26%,
+    color-mix(in srgb, var(--bg) 45%, var(--surface-warm)) 46%,
+    color-mix(in srgb, var(--surface-warm) 82%, var(--warm)) 54%,
+    color-mix(in srgb, var(--bg) 52%, var(--surface-warm)) 66%,
+    var(--bg) 100%
+  );
+}
+
+/* Lighter than default cards: border-first, no heavy lift */
+.card-soft {
+  background: color-mix(in srgb, var(--surface) 88%, var(--surface-warm));
+  border: 1px solid var(--border-warm);
+  box-shadow: none;
 }
 
 body {

@@ -11,7 +11,7 @@ const chips = [
 
 export function WhoIHelp() {
   return (
-    <section className="py-[4.5rem] lg:py-24 section-alt" id="audience">
+    <section className="py-[4.5rem] lg:py-24 section-warm" id="audience">
       <div className="w-[min(calc(100%-2rem),var(--max))] mx-auto">
         <FadeUp>
           <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
@@ -30,7 +30,7 @@ export function WhoIHelp() {
             {chips.map((label) => (
               <div
                 key={label}
-                className="inline-flex items-center justify-center py-[0.95rem] px-4 text-center bg-[var(--surface)] border border-[var(--border)] rounded-full shadow-[var(--shadow)] font-medium"
+                className="card-soft inline-flex items-center justify-center py-[0.95rem] px-4 text-center rounded-full font-medium"
               >
                 {label}
               </div>
