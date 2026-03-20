@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chien | Practical AI for Real Life
+
+A personal clarity page — "AI Translator for Real Life." Answers: Who are you? What do you do? Who do you help? How do you think? How can someone reach out?
+
+**Design**: Calm, modern, human-centered tech. Soft near-white background, deep slate/navy text, restrained blue accent. Mobile-first vertical scroll.
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- Tailwind CSS v4
+- TypeScript
+- Lucide React (icons)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — Start development server
+- `npm run build` — Production build
+- `npm run start` — Start production server
+- `npm run lint` — Run ESLint
 
-## Learn More
+## Replacing Placeholders
 
-To learn more about Next.js, take a look at the following resources:
+### Profile Photo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Add your profile image to `public/profile.jpg` (or another path).
+2. Update the Hero component to use the image:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+import Image from "next/image";
+
+<Image
+  src="/profile.jpg"
+  alt="Chien"
+  width={132}
+  height={132}
+  className="rounded-2xl object-cover"
+/>
+```
+
+### Contact Details
+
+- **Email**: Edit `EMAIL` in `src/components/Connect.tsx`.
+- **LinkedIn**: Replace the placeholder div with a Link component and your profile URL.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/ai-intergrator)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Or connect your GitHub repo in the [Vercel dashboard](https://vercel.com) for automatic deploys on push.
+
+## CI
+
+GitHub Actions runs on push/PR to `main`:
+
+- Lint
+- Build

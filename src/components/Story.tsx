@@ -1,0 +1,66 @@
+import { FadeUp } from "./FadeUp";
+
+export function Story() {
+  return (
+    <section className="py-[4.5rem] lg:py-24" id="story">
+      <div className="w-[min(calc(100%-2rem),var(--max))] mx-auto grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+        <FadeUp>
+          <article className="bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-xl)] shadow-[var(--shadow)] p-[1.35rem]">
+            <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
+              A little about me
+            </div>
+            <h2 className="m-0 mb-[0.85rem] font-[family-name:var(--font-sora)] text-[clamp(1.7rem,4vw,2.6rem)] leading-[1.08] tracking-tight">
+              Creative, technical, and deeply interested in useful technology
+            </h2>
+            <p className="m-0 text-[var(--muted)]">
+              My background spans creative work, technology, and hands-on real-world experience. I care deeply about
+              learning, design, human potential, and using technology in ways that genuinely improve life.
+            </p>
+            <p className="mt-4 m-0 text-[var(--muted)]">
+              Over time, AI has become one of the most exciting areas for me because it can help people think more clearly,
+              work more effectively, and open new possibilities across everyday life and business.
+            </p>
+            <div className="mt-4 py-4 px-4 border-l-4 border-[var(--warm)] bg-[#fffaf6] rounded-r-2xl text-[var(--text)] font-medium">
+              I&apos;m especially drawn to the translation layer — helping people move from &quot;I&apos;ve heard about AI&quot; to
+              &quot;I can actually use this in a way that helps me.&quot;
+            </div>
+          </article>
+        </FadeUp>
+
+        <FadeUp>
+          <aside
+            className="bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-xl)] shadow-[var(--shadow)] p-[1.35rem]"
+            aria-label="Quick snapshot"
+          >
+            <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
+              Quick snapshot
+            </div>
+            <h2 className="m-0 mb-[0.85rem] font-[family-name:var(--font-sora)] text-[clamp(1.5rem,3.5vw,2rem)] leading-[1.08] tracking-tight">
+              What people should understand quickly
+            </h2>
+            <div className="grid gap-3 grid-cols-1">
+              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
+                <strong className="block mb-1 text-[0.95rem]">Builder mindset</strong>
+                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
+                  I like turning ideas into clear, usable systems and experiences.
+                </p>
+              </div>
+              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
+                <strong className="block mb-1 text-[0.95rem]">Human-centered</strong>
+                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
+                  I care about technology that genuinely helps people, not just impresses them.
+                </p>
+              </div>
+              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
+                <strong className="block mb-1 text-[0.95rem]">Practical translator</strong>
+                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
+                  I enjoy taking complex tools and making them understandable and usable.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}
