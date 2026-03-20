@@ -4,6 +4,7 @@ import { WhatIHelp } from "@/components/WhatIHelp";
 import { WhoIHelp } from "@/components/WhoIHelp";
 import { Approach } from "@/components/Approach";
 import { UseCases } from "@/components/UseCases";
+import { RealExamples } from "@/components/RealExamples";
 import { Story } from "@/components/Story";
 import { Connect } from "@/components/Connect";
 import { Footer } from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <WhoIHelp />
         <Approach />
         <UseCases />
+        <RealExamples />
         <Story />
         <Connect />
       </main>

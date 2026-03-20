@@ -6,7 +6,7 @@ const EMAIL = "hello@example.com";
 
 export function Connect() {
   return (
-    <section className="py-[4.5rem] lg:py-24" id="connect">
+    <section className="py-[4.5rem] lg:py-24 section-alt" id="connect">
       <div className="w-[min(calc(100%-2rem),var(--max))] mx-auto">
         <FadeUp>
           <div className="bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-xl)] shadow-[var(--shadow)] p-[1.35rem]">

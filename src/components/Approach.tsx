@@ -1,18 +1,22 @@
+import { HeartHandshake, Layers, Target } from "lucide-react";
 import { FadeUp } from "./FadeUp";
 
 const principles = [
   {
     number: 1,
+    icon: Target,
     title: "Start with the real problem",
     description: "The best AI use cases begin with a real friction point, not a trendy tool.",
   },
   {
     number: 2,
+    icon: Layers,
     title: "Use the simplest useful workflow",
     description: "The best solution is usually the one people will actually use consistently.",
   },
   {
     number: 3,
+    icon: HeartHandshake,
     title: "Keep the human in the center",
     description: "AI should support judgment, creativity, and connection — not replace them.",
   },
@@ -37,13 +41,18 @@ export function Approach() {
             </p>
 
             <div className="grid gap-[0.9rem] mt-5">
-              {principles.map(({ number, title, description }) => (
+              {principles.map(({ number, icon: Icon, title, description }) => (
                 <div
                   key={number}
-                  className="grid grid-cols-[40px_1fr] gap-[0.85rem] items-start p-4 bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-md)]"
+                  className="grid grid-cols-[52px_1fr] gap-[0.85rem] items-start p-4 bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-md)]"
                 >
-                  <div className="w-9 h-9 rounded-full bg-[var(--accent-soft)] text-[var(--accent)] grid place-items-center font-bold">
-                    {number}
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="w-9 h-9 rounded-full bg-[var(--accent-soft)] text-[var(--accent)] grid place-items-center font-bold text-sm">
+                      {number}
+                    </div>
+                    <div className="grid h-8 w-8 place-items-center rounded-lg border border-[var(--border)] bg-white text-[var(--accent)]">
+                      <Icon className="w-4 h-4" aria-hidden />
+                    </div>
                   </div>
                   <div>
                     <h4 className="m-0 mb-[0.2rem] text-base">{title}</h4>

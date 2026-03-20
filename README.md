@@ -20,6 +20,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+### Testing on iPhone / same Wi‑Fi (dev)
+
+The dev server listens on all interfaces by default (`0.0.0.0`). On your phone, open **`http://<your-mac-lan-ip>:3000`** (the “Network” URL Next prints in the terminal).
+
+`allowedDevOrigins` in [`next.config.ts`](next.config.ts) allows HMR and dev assets from typical private LANs (`192.168.*.*`, `10.*.*.*`). If your LAN uses another range (e.g. `172.16.x.x`), set hosts in `.env.local`:
+
+```bash
+ALLOWED_DEV_ORIGINS=172.16.0.5,another-host.local
+```
+
+Restart `npm run dev` after changing config or env.
+
+### Visual QA (MCP / screenshots)
+
+See **[docs/dev-visual-feedback.md](docs/dev-visual-feedback.md)** for using **Cursor IDE Browser** or **Playwright MCP** to navigate the running app, capture full-page screenshots, and tighten the design loop.
+
 ## Scripts
 
 - `npm run dev` — Start development server
@@ -29,21 +45,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Replacing Placeholders
 
-### Profile Photo
+### Profile photo (Hero + social preview)
 
-1. Add your profile image to `public/profile.jpg` (or another path).
-2. Update the Hero component to use the image:
+The headshot lives at **`public/asset/chien_head_shot.jpg`**. The Hero uses **`next/image`** with `priority` and a tight `sizes` attribute so the browser requests only ~104–132px-wide variants in the sidebar; in production Next serves **WebP/AVIF** automatically. Swap the file in place to update—no manual conversion needed.
 
-```tsx
-import Image from "next/image";
+For correct **Open Graph / Twitter** absolute URLs in production, set in Vercel (or `.env.local`):
 
-<Image
-  src="/profile.jpg"
-  alt="Chien"
-  width={132}
-  height={132}
-  className="rounded-2xl object-cover"
-/>
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 ### Contact Details
@@ -59,7 +68,8 @@ Or connect your GitHub repo in the [Vercel dashboard](https://vercel.com) for au
 
 ## CI
 
-GitHub Actions runs on push/PR to `main`:
+GitHub Actions runs on **every pull request** and on **pushes to `main`**: install, lint, build.
 
-- Lint
-- Build
+To **require CI before merging** into `main`, enable branch protection in GitHub (see **[docs/github-branch-protection.md](docs/github-branch-protection.md)**).
+
+Screenshot-based design notes: **[docs/visual-analysis-from-screenshots.md](docs/visual-analysis-from-screenshots.md)**.

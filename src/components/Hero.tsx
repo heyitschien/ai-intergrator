@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FadeUp } from "./FadeUp";
+import { HEADSHOT_PATH } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -10,10 +12,13 @@ export function Hero() {
             <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
               AI, technology, and practical problem solving
             </div>
-            <h1 className="mt-4 mb-4 font-[family-name:var(--font-sora)] text-[clamp(2.25rem,9vw,4rem)] leading-[0.98] tracking-tight">
+            <h1 className="mt-4 mb-2 font-[family-name:var(--font-sora)] text-[clamp(2.25rem,9vw,4rem)] leading-[0.98] tracking-tight">
               Helping people and businesses{" "}
               <span className="block text-[var(--accent)]">use AI in real life</span>
             </h1>
+            <p className="m-0 mb-4 text-[var(--text)] text-[1.05rem] font-medium max-w-[38rem] leading-snug">
+              AI translator for real life — I help turn complex tools into clear, practical steps you can actually use.
+            </p>
             <p className="m-0 text-[var(--muted)] text-[1.02rem] max-w-[38rem]">
               I&apos;m Chien — a technologist who enjoys turning AI into practical, helpful tools for everyday life,
               creative work, and small business workflows. I care about making technology feel clear, useful,
@@ -47,12 +52,15 @@ export function Hero() {
             aria-label="Profile summary card"
           >
             <div className="grid grid-cols-[104px_1fr] lg:grid-cols-[132px_1fr] items-center gap-4">
-              <div
-                className="aspect-square w-full rounded-2xl bg-gradient-to-br from-[#d9e8ff] via-white to-[#f3e9df] border border-[var(--border)] grid place-items-center text-[var(--accent)] font-bold tracking-widest text-sm"
-                role="img"
-                aria-label="Profile photo placeholder"
-              >
-                PHOTO
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow)] bg-[var(--accent-soft)]">
+                <Image
+                  src={HEADSHOT_PATH}
+                  alt="Chien — technologist helping people use AI in practical, human ways"
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) 104px, 132px"
+                  className="object-cover object-top"
+                />
               </div>
               <div>
                 <h2 className="m-0 text-xl leading-tight">Chien</h2>

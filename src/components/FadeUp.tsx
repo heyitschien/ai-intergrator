@@ -9,6 +9,12 @@ export function FadeUp({ children }: { children: ReactNode }) {
     const el = ref.current;
     if (!el) return;
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      el.classList.add("visible");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

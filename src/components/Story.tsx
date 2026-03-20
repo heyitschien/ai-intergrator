@@ -1,4 +1,23 @@
+import { Boxes, Heart, Languages } from "lucide-react";
 import { FadeUp } from "./FadeUp";
+
+const snapshotItems = [
+  {
+    icon: Boxes,
+    title: "Builder mindset",
+    body: "I like turning ideas into clear, usable systems and experiences.",
+  },
+  {
+    icon: Heart,
+    title: "Human-centered",
+    body: "I care about technology that genuinely helps people, not just impresses them.",
+  },
+  {
+    icon: Languages,
+    title: "Practical translator",
+    body: "I enjoy taking complex tools and making them understandable and usable.",
+  },
+];
 
 export function Story() {
   return (
@@ -39,24 +58,20 @@ export function Story() {
               What people should understand quickly
             </h2>
             <div className="grid gap-3 grid-cols-1">
-              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
-                <strong className="block mb-1 text-[0.95rem]">Builder mindset</strong>
-                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
-                  I like turning ideas into clear, usable systems and experiences.
-                </p>
-              </div>
-              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
-                <strong className="block mb-1 text-[0.95rem]">Human-centered</strong>
-                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
-                  I care about technology that genuinely helps people, not just impresses them.
-                </p>
-              </div>
-              <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]">
-                <strong className="block mb-1 text-[0.95rem]">Practical translator</strong>
-                <p className="m-0 text-[var(--muted)] text-[0.92rem]">
-                  I enjoy taking complex tools and making them understandable and usable.
-                </p>
-              </div>
+              {snapshotItems.map(({ icon: Icon, title, body }) => (
+                <div
+                  key={title}
+                  className="flex gap-3 p-4 rounded-[var(--radius-md)] bg-[var(--surface)] border border-[var(--border)]"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-[var(--accent)]">
+                    <Icon className="w-5 h-5" aria-hidden />
+                  </div>
+                  <div className="min-w-0">
+                    <strong className="block mb-1 text-[0.95rem]">{title}</strong>
+                    <p className="m-0 text-[var(--muted)] text-[0.92rem]">{body}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </aside>
         </FadeUp>

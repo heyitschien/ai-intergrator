@@ -35,6 +35,28 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Gentle section rhythm — “peaceful intelligence” without heavy bands */
+.section-alt {
+  background: linear-gradient(
+    180deg,
+    rgba(234, 242, 255, 0.4) 0%,
+    rgba(247, 250, 252, 0.85) 45%,
+    transparent 100%
+  );
+}
+
 body {
   margin: 0;
   background: linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);

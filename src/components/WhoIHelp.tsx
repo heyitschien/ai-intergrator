@@ -11,7 +11,7 @@ const chips = [
 
 export function WhoIHelp() {
   return (
-    <section className="py-[4.5rem] lg:py-24" id="audience">
+    <section className="py-[4.5rem] lg:py-24 section-alt" id="audience">
       <div className="w-[min(calc(100%-2rem),var(--max))] mx-auto">
         <FadeUp>
           <div className="inline-flex items-center gap-2 py-2 px-[0.85rem] rounded-full bg-[var(--accent-soft)] text-[var(--accent)] text-[0.82rem] font-semibold tracking-wide">
